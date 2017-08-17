@@ -7,6 +7,7 @@ I ussually use [rename](https://github.com/morshedalam/rename) to just rename th
 Then there are few areas where you should not forget to do it yourself:
 
 * .env contains DB name which should be app specific
+* database.yml defaults to rails_template values
 * Dockerfile-dev contains APP_HOME
 * docker-compose.yml contains it in more places (look for `rails-template-sync` and `rails_template`)
 * docker-sync.yml also has `rails-template-sync` name in it

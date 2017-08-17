@@ -9,7 +9,7 @@ end
 gem 'devise'
 
 # env variables setup
-gem 'dotenv-rails'
+gem 'dotenv-rails', '~> 2.1'
 
 # KEEP RAILS UP TO DATE!
 gem 'rails', '~> 5.1'
