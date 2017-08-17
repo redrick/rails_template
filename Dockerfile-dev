@@ -1,0 +1,16 @@
+FROM redrick/ruby_base_image:latest
+
+MAINTAINER  Andrej Antas <andrej@antas.cz>
+
+ENV APP_HOME /rails_template
+RUN mkdir -p $APP_HOME
+WORKDIR $APP_HOME
+
+ADD . .
+
+ENV BUNDLE_GEMFILE=$APP_HOME/Gemfile \
+    BUNDLE_JOBS=2 \
+    BUNDLE_PATH=/bundle
+
+RUN bundle install
+ADD . $APP_HOME

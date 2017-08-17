@@ -1,0 +1,35 @@
+version: "2"
+services:
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "5432"
+  redis:
+    image: redis
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    command: bundle exec rails start
+    env_file: .env.docker
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+    volumes_from:
+      - bundle
+    volumes:
+      - rails-template-sync:/rails_template:nocopy
+  bundle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /bundle
+
+volumes:
+  rails-template-sync:
+    external: true

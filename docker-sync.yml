@@ -1,0 +1,8 @@
+version: "2"
+options:
+  verbose: true
+  compose-file-path: 'docker-compose.yml'
+syncs:
+  rails-template-sync:
+    src: '.'
+    # sync_excludes: ['node_modules/']
