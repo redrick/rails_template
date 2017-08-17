@@ -5,4 +5,4 @@ options:
 syncs:
   rails-template-sync:
     src: '.'
-    # sync_excludes: ['node_modules/']
+    sync_excludes: ['node_modules/']
