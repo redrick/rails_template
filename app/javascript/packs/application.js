@@ -15,5 +15,6 @@ Rails.start();
 import jQuery from 'jquery'
 window.jQuery = jQuery
 
+var jqueryUI = require('jquery-ui');
 var boostrap = require('bootstrap');
-var adminLte = require('admin-lte');
+var adminLTE = require('admin-lte');

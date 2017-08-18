@@ -1,0 +1,33 @@
+<!-- Main Header -->
+<header class="main-header">
+  <!-- Logo -->
+  <a href="index2.html" class="logo">
+    <span class="logo-mini"><b>A</b>LT</span>
+    <span class="logo-lg"><b>Admin</b>LTE</span>
+  </a>
+  <!-- /.Logo -->
+
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <%= render 'layouts/admin/header/messages' %>
+        <%= render 'layouts/admin/header/notifications' %>
+        <%= render 'layouts/admin/header/tasks' %>
+
+        <%= render 'layouts/admin/header/user_card' %>
+        <!-- Settings toggle -->
+        <li>
+          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+        </li>
+        <!-- Settings toggle end -->
+      </ul>
+    </div>
+  </nav>
+</header>
+<!-- /.Main Header -->

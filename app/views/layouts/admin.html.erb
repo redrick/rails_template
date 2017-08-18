@@ -9,6 +9,28 @@
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini">
-    <%= yield %>
+    <div class="wrapper">
+      <%= render 'layouts/admin/header' %>
+      <%= render 'layouts/admin/sidebar' %>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content container-fluid">
+
+          <!-- Page content -->
+          <%= yield %>
+          <!-- /.Page content -->
+
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+
+      <%= render 'layouts/admin/footer' %>
+
+      <%= render 'layouts/admin/control_panel' %>
+    </div>
   </body>
 </html>
