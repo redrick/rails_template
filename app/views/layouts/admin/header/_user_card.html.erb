@@ -5,7 +5,7 @@
     <!-- The user image in the navbar-->
     <!-- <img src="dist/img/user2&#45;160x160.jpg" class="user&#45;image" alt="User Image"> -->
     <!-- hidden-xs hides the username on small devices so only the image appears. -->
-    <span class="hidden-xs">Alexander Pierce</span>
+    <span class="hidden-xs"><%= current_admin_user.email %></span>
   </a>
   <ul class="dropdown-menu">
     <!-- The user image in the menu -->
@@ -13,8 +13,8 @@
       <!-- <img src="dist/img/user2&#45;160x160.jpg" class="img&#45;circle" alt="User Image"> -->
 
       <p>
-        Alexander Pierce - Web Developer
-        <small>Member since Nov. 2012</small>
+        <%= current_admin_user.email %>
+        <small>Member since <%= current_admin_user.created_at.strftime("%m/%Y") %></small>
       </p>
     </li>
     <!-- Menu Body -->
