@@ -5,6 +5,14 @@ First project I did with it was a no brainer, so there is loads missing I use on
 but since my previous unpublished one is out of date (rails 4.2) I will have to implement
 all that stuff in here (see TODOs down)
 
+Demo could be seen here:
+
+* Frontend - [https://rails-template.railscode.eu/](https://rails-template.railscode.eu/)
+* Admin - [https://rails-template.railscode.eu/admin](https://rails-template.railscode.eu/admin)
+* Admin login:
+  * email: `hello@world.com`
+  * pwd: `whateverdude`
+
 ## What this provides?
 
 It provides couple things, but first and foremost it is:
