@@ -1,0 +1,17 @@
+<%= content_for :title, 'Admin Users' %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to 'Novy admin', new_admin_admin_user_path, class: 'btn btn-default' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class='box box-primary'>
+      <div class='box-body'>
+        <%= render 'list', admin_users: @admin_users %>
+      </div>
+    </div>
+  </div>
+</div>

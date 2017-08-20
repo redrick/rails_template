@@ -1,0 +1,11 @@
+<tr>
+  <td><%= admin_user.id %></td>
+  <td><%= admin_user.email %></td>
+  <td><%= admin_user.created_at.to_formatted_s(:long_ordinal) %></td>
+  <td><%= admin_user.try(:last_sign_in_at).try(:to_formatted_s, :long_ordinal) %></td>
+  <td>
+    <%= link_to 'Edit', edit_admin_admin_user_path(admin_user) %>
+    |
+    <%= link_to 'Delete', admin_admin_user_path(admin_user), method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>

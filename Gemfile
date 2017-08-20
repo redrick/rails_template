@@ -33,6 +33,9 @@ gem 'webpacker'
 # JSON API
 gem 'jbuilder', '~> 2.5'
 
+# pagination
+gem 'will_paginate'
+
 group :development, :test do
   gem 'overcommit', require: false
   gem 'poltergeist'
@@ -46,8 +49,6 @@ end
 
 group :development do
   gem 'bundler-audit'
-  # FIXME: devise view generator, once finished remove me please
-  gem 'devise-bootstrapped'
   # docker sync files with container
   gem 'docker-sync'
   # run procfile tasks

@@ -8,7 +8,7 @@
     <%= stylesheet_pack_tag 'stylesheets' %>
   </head>
 
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body class="hold-transition skin-blue">
     <div class="wrapper">
       <%= render 'layouts/admin/header' %>
       <%= render 'layouts/admin/sidebar' %>
@@ -19,8 +19,25 @@
         <!-- Main content -->
         <section class="content container-fluid">
 
+          <!-- Content Header (Page header) -->
+          <% if content_for?(:title) %>
+            <section class="content-header">
+              <h1>
+                <%= yield(:title) %>
+                <small><%= yield(:subtitle) %></small>
+              </h1>
+              <!-- <ol class="breadcrumb"> -->
+              <!--   <li><a href="#"><i class="fa fa&#45;dashboard"></i> Level</a></li> -->
+              <!--   <li class="active">Here</li> -->
+              <!-- </ol> -->
+            </section>
+          <% end %>
+          <!-- /.Content Header -->
+
           <!-- Page content -->
-          <%= yield %>
+          <section class='content'>
+            <%= yield %>
+          </section>
           <!-- /.Page content -->
 
         </section>
