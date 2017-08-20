@@ -1,5 +1,35 @@
 # Dockerized rails 5.1 boilerplate for simple projects
 
+This is basically something like a base for my projects... a boilerplate if you will...
+First project I did with it was a no brainer, so there is loads missing I use on bigger projects,
+but since my previous unpublished one is out of date (rails 4.2) I will have to implement
+all that stuff in here (see TODOs down)
+
+## What this provides?
+
+It provides couple things, but first and foremost it is:
+* Rails 5.1 boilerplate
+* webpacker and yarn are used (hopefully I move completely away from assets
+  pipeline which is still left there hanging)
+* Tests are configured and using Rspec, Capybara + poltergeist, VCR and couple
+  more usefull configs
+* Using PostgreSQL
+* dotenv
+* Devise (and admin_user)
+* [AdminLTE](https://adminlte.io/themes/AdminLTE/) for `/admin/...`
+  * accessible on /admin/home
+  * create your user in rails console: `> AdminUser.create(email: 'hello@world.com', password: 'whateverdude')`
+* Couple things watching your every step...
+  * Rubocop
+  * rubycritic
+  * rails_best_practices
+  * overcommit (running couple more precommit hooks...)
+
+There are couple more things prepared for usage, which you can simply discover by running through `Gemfile`
+and also `config` directory
+
+Will be adding more as time goes and different projects get finished
+
 ## Renaming to your app
 
 I ussually use [rename](https://github.com/morshedalam/rename) to just rename the whole app to something more suitable
@@ -14,9 +44,35 @@ Then there are few areas where you should not forget to do it yourself:
 
 ## Setup
 
+To setup a basic project there is not much to do....
+
+Clone this repo:
+
+```
+$ git clone git@github.com:redrick/rails_template.git
+```
+
+Enter the directory with project, and run bundle:
+
+```
+$ cd rails_template
+$ bundle
+```
+
+Then you are ready to run both webpack and rails server and enjoy the app:
+
+```
+rails start
+```
+
+This one is basically just a rake task that starts  `webpack-dev-server` and `rails s` on your machine.
+Your app is now running on port `5000` which you can change whenever you
+want...
+
 ### Docker
 
-Tested on MacOS
+Tested on MacOS (well not really with webpacker, but previously this was
+flawless the way it is... I just transfered over configs and stuff...)
 
 Try out docker-sync so it install all required dependencies and downloads all images correctly:
 
@@ -48,3 +104,26 @@ so e.x. running testsuite looks like this:
 ```
 docker-compose -f docker-compose.yml run web bundle exec rspec
 ```
+
+# TODOs
+
+There are many more things missing:
+
+* Discover and use more of adminLTE cool stuff
+* Yarn packages (ton of then either missing or not working...)
+* Translations... hardoced stuff all over the place...
+* I use [wercker](http://www.wercker.com/) as free CI for private github repos
+  (so please add default config...)
+* More utilities watching for potential problems:
+  * Brakeman
+  * bundle-audit
+* Test out and correct docker so could be used...
+* And much more I will discover...
+
+# Contributing
+
+You probably know anyway right?
+
+Write me in the issues, I will gladly help with any of them :)
+
+Or just fork and create PR, that woul be very much appreciated :)
