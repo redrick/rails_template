@@ -29,9 +29,12 @@ It provides couple things, but first and foremost it is:
   * create your user in rails console: `> AdminUser.create(email: 'hello@world.com', password: 'whateverdude')`
 * Couple things watching your every step...
   * Rubocop
-  * rubycritic
+  * rubycritic (in wercker example config)
   * rails_best_practices
   * overcommit (running couple more precommit hooks...)
+  * Brakeman (in wercker example config)
+  * bundle-audit (in wercker example config)
+* [Wercker](http://www.wercker.com/) as free CI for private github repos - default .yml config
 
 There are couple more things prepared for usage, which you can simply discover by running through `Gemfile`
 and also `config` directory
@@ -119,12 +122,7 @@ There are many more things missing:
 
 * Discover and use more of adminLTE cool stuff
 * Yarn packages (ton of then either missing or not working...)
-* Translations... hardoced stuff all over the place...
-* I use [wercker](http://www.wercker.com/) as free CI for private github repos
-  (so please add default config...)
-* More utilities watching for potential problems:
-  * Brakeman
-  * bundle-audit
+* Translations... hardcoded stuff all over the place...
 * Test out and correct docker so could be used...
 * And much more I will discover...
 
