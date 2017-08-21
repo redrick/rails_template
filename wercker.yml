@@ -1,0 +1,54 @@
+ruby: 2.4.1
+box: redrick/ruby_base_image:latest
+services:
+  - postgres
+  - redis
+build:
+  steps:
+    - install-packages:
+      packages: redis-server redis-tools
+    - script:
+      name: start redis
+      code: |
+        redis-server --daemonize yes
+        redis-cli ping
+    - bundle-install
+    - rails-database-yml
+    - script:
+      name: echo lib information
+      code: |
+        echo "ruby version $(ruby --version) running!"
+        echo "from location $(which ruby)"
+        echo -p "gem list: $(gem list)"
+    - script:
+      name: Set up db
+      code: bundle exec rake db:schema:load RAILS_ENV=test
+
+    - script:
+      name: run rubocop
+      code: bundle exec rubocop
+
+    - script:
+      name: run brakeman
+      code: |
+        gem install brakeman
+        brakeman
+    - script:
+      name: run bundle audit
+      code: |
+        gem install bundler-audit
+        bundle-audit update
+        bundle-audit check
+    - script:
+      name: run rubycritic
+      code: |
+        bundle exec rubycritic -f console
+    - script:
+      name: rspec
+      code: bundle exec rspec
+
+  # after-steps:
+  #   - slack-notifier:
+  #     url: $SLACK_URL
+  #     channel: build_status
+  #     username: 'Wercker Dude'
