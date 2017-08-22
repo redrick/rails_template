@@ -35,6 +35,7 @@ It provides couple things, but first and foremost it is:
   * Brakeman (in wercker example config)
   * bundle-audit (in wercker example config)
 * [Wercker](http://www.wercker.com/) as free CI for private github repos - default .yml config
+* Docker fully configured to be used for development (Win users in the team)
 
 There are couple more things prepared for usage, which you can simply discover by running through `Gemfile`
 and also `config` directory
@@ -135,7 +136,6 @@ There are many more things missing:
 * Discover and use more of adminLTE cool stuff
 * Yarn packages (ton of then either missing or not working...)
 * Translations... hardcoded stuff all over the place...
-* Test out and correct docker so could be used...
 * And much more I will discover...
 
 # Contributing
