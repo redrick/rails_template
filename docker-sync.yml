@@ -4,6 +4,6 @@ options:
   compose-file-path: 'docker-compose.yml'
 syncs:
   rails-template-sync:
-    src: '.'
+    src: './'
     sync_strategy: 'native_osx'
     sync_excludes: ['node_modules/']

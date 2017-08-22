@@ -21,6 +21,7 @@
 /yarn-error.log
 
 .byebug_history
+.docker-sync/
 /public/packs
 /node_modules
 /coverage/

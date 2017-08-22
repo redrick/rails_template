@@ -5,7 +5,7 @@ services:
     environment:
       - POSTGRES_DB=${DB_NAME}
     ports:
-      - "5432"
+      - "5432:5432"
   redis:
     image: redis
   web:
@@ -13,9 +13,11 @@ services:
       context: .
       dockerfile: Dockerfile-dev
     command: bundle exec rails start
-    env_file: .env.docker
+    env_file:
+      - .env.docker
     ports:
-      - "3000:3000"
+      - "5000:5000"
+      - "8080:8080"
     depends_on:
       - postgres
       - redis

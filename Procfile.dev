@@ -1,2 +1,2 @@
-web: bundle exec rails s -p 5000
-webpacker: ./bin/webpack-dev-server
+web: bundle exec rails s -p 5000 -b 0.0.0.0
+webpacker: bundle exec ./bin/webpack-dev-server --public 0.0.0.0:8080

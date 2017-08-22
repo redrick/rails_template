@@ -95,11 +95,23 @@ Will seem like your app is started, but that is not all, you will get all kinds
 of mistakes about DB, so you need to create and load DB structure:
 
 ```
-docker-compose -f docker-compose.yml run bundle exec rails db:create db:structure:load
+docker-compose -f docker-compose.yml run bundle web exec rails db:create db:structure:load
+```
+
+You will also need to install yarn packages since `/node_modules` is taken out of sync list for docker by running:
+
+```
+docker-compose -f docker-compose.yml run web yarn install
 ```
 
 Now it will start correctly and you are able to load it too.
 First load is insanely slow, but from then on it will run smoothly for you.
+
+#### DISCLAIMER
+
+Docker uses `.env` file to read defaults on startup and defined `env_file` for
+runtime substitutions... therefore the contents on `.env` in example look like
+that ;)
 
 #### More commands
 
