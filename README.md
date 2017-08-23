@@ -37,6 +37,13 @@ It provides couple things, but first and foremost it is:
 * [Wercker](http://www.wercker.com/) as free CI for private github repos - default .yml config
 * Docker fully configured to be used for development (Win users in the team)
 
+I highly recommend using [dokku](https://github.com/dokku/dokku) even for
+production envs. which really takes pressure off you as developer, but I get
+the idea of how hard it may be to have your own PaaS and install and update
+server, why not just use heroku for that purpose right? So here is a button:
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
 There are couple more things prepared for usage, which you can simply discover by running through `Gemfile`
 and also `config` directory
 

@@ -1,0 +1,7 @@
+{
+  "name": "Rails 5.1 boilerplate Template",
+  "description": "Rails 5.1 boilerplate with webpacker and adminLTE interface",
+  "repository": "https://github.com/redrick/rails_template",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Ruby_on_Rails_logo.jpg",
+  "keywords": ["ruby", "webpack", "rails5.1", "boilerplate"]
+}
