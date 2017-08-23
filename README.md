@@ -1,4 +1,4 @@
-# Dockerized rails 5.1 boilerplate
+# Dockerized Ruby on Rails 5.1 boilerplate
 
 This is basically something like a base for my projects... a boilerplate if you will...
 First project I did with it was a no brainer, so there is loads missing I use on bigger projects,
