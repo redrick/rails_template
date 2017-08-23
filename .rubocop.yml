@@ -5,6 +5,7 @@ AllCops:
     - 'bin/**/*'
     - 'config/**/*'
     - 'node_modules/**/*'
+    - 'lib/tasks/**/*'
   CacheRootDirectory: '../../tmp'
 
 Rails:

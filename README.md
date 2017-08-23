@@ -1,4 +1,4 @@
-# Dockerized rails 5.1 boilerplate for simple projects
+# Dockerized rails 5.1 boilerplate
 
 This is basically something like a base for my projects... a boilerplate if you will...
 First project I did with it was a no brainer, so there is loads missing I use on bigger projects,
@@ -48,6 +48,44 @@ There are couple more things prepared for usage, which you can simply discover b
 and also `config` directory
 
 Will be adding more as time goes and different projects get finished
+
+### Rake tasks
+
+#### DB
+
+This template also provides you with usefull DB rake tasks, but if and only if
+you use dokku as mentioned before for deployment here...
+
+all you need is SSH key added as root user on server where your dokku runs
+(which you probably have anyway...)
+
+And know your server IP address and name of postgres container linked to your
+dokku instance... You just fill those out in `.env` as `REMOTE..` keys
+respectively... then you are all set for these things:
+
+Backing up your given remote DB to your local machine with:
+
+```
+rails db:backup
+```
+
+And the script will tell you where it saves the `.sql` human readable dump of DB.
+
+Then you can run import of that backup to local DB if properly configured (`.env` again):
+
+```
+bin/rails db:environment:set RAILS_ENV=development db:import_backup
+```
+
+Standard disclaimer here, as this task drops and recreates your DB please set
+env variable as given, this script is not intended to be used outside importing
+development DB!
+
+And also provides a task that does both in one go:
+
+```
+bin/rails db:environment:set RAILS_ENV=development db:backup_and_import
+```
 
 ## Renaming to your app
 

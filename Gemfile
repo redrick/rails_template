@@ -36,6 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # pagination
 gem 'will_paginate'
 
+# mainly db rake task for ssh to deployed server
+gem 'net-ssh'
+
 group :development, :test do
   gem 'overcommit', require: false
   gem 'poltergeist'
