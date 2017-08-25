@@ -13,7 +13,7 @@ module Admin
       @admin_user = AdminUser.new(premitted_params[:admin_user])
 
       if @admin_user.save
-        redirect_to admin_admin_users_path
+        redirect_to admin_admin_users_path, flash: { success: 'Admin created' }
       else
         render 'new'
       end

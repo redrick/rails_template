@@ -1,0 +1,6 @@
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %>" role='alert'>
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <h4><i class="icon fa fa-<%= alert_icon_for(key) %>"></i><%= value %></h4>
+  </div>
+<% end %>

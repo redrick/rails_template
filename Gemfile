@@ -39,6 +39,10 @@ gem 'will_paginate'
 # mainly db rake task for ssh to deployed server
 gem 'net-ssh'
 
+# i18n
+gem 'globalize', github: 'globalize/globalize'
+gem 'i18n'
+
 group :development, :test do
   gem 'overcommit', require: false
   gem 'poltergeist'
