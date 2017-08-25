@@ -19,5 +19,16 @@ module RailsTemplate
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.default_locale = :cs
     I18n.available_locales = [:en, :cs]
+
+    config.active_job.queue_adapter = :sidekiq
+
+    config.redis_settings = {
+      url: ENV.fetch('REDIS_URL'),
+      namespace: ENV.fetch('REDIS_NAMESPACE')
+    }
+
+    Sidekiq.configure_client do |config|
+      config.redis = Rails.configuration.redis_settings
+    end
   end
 end

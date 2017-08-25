@@ -43,6 +43,15 @@ gem 'net-ssh'
 gem 'globalize', github: 'globalize/globalize'
 gem 'i18n'
 
+# Redis - cache, session, sidekiq...
+gem 'redis-namespace'
+gem 'redis-rails'
+
+# ActiveJob
+gem 'sidekiq'
+gem 'sidekiq-cron'
+gem 'sinatra', require: nil
+
 group :development, :test do
   gem 'overcommit', require: false
   gem 'poltergeist'

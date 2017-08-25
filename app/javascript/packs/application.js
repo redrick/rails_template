@@ -18,3 +18,8 @@ window.jQuery = jQuery
 var jqueryUI = require('jquery-ui');
 var boostrap = require('bootstrap');
 var adminLTE = require('admin-lte');
+
+// INIT.js
+$(document).ready(function() {
+  $.AdminLTE.pushMenu.activate('[data-toggle="push-menu"]')
+});
