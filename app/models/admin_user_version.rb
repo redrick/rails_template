@@ -1,0 +1,2 @@
+class AdminUserVersion < Version
+end

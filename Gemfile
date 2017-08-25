@@ -43,6 +43,9 @@ gem 'net-ssh'
 gem 'globalize', github: 'globalize/globalize'
 gem 'i18n'
 
+# Model versioning
+gem 'paper_trail'
+
 # Redis - cache, session, sidekiq...
 gem 'redis-namespace'
 gem 'redis-rails'
