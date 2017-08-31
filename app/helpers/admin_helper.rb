@@ -5,7 +5,7 @@ module AdminHelper
         content_tag(:div, class: 'pagination') { page_entries_info(collection) }
       end
       pagination = content_tag :div, class: 'col-md-6' do
-        will_paginate(collection, renderer: PaginationListLinkRenderer)
+        will_paginate(collection, renderer: ::PaginationListLinkRenderer)
       end
       info + pagination
     end
