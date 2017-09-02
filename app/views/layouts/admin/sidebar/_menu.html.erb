@@ -1,16 +1,6 @@
 <!-- Sidebar Menu -->
-<ul class="sidebar-menu" data-widget="tree">
-  <li class="header">HEADER</li>
-  <!-- Optionally, you can add icons to the links -->
-  <li>
-    <%= link_to admin_admin_users_path do %>
-      <i class="fa fa-link"></i> <span>Admin Users</span>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to admin_sidekiq_index_path do %>
-      <i class="fa fa-link"></i> <span>Sidekiq</span>
-    <% end %>
-  </li>
-</ul>
+<%= sidebar_menu 'Real header' do %>
+  <%= menu_link_to 'admin_users', 'Admin Users', admin_admin_users_path, 'users' %>
+  <%= menu_link_to 'sidekiq', 'Sidekiq', admin_sidekiq_index_path, 'heartbeat' %>
+<% end %>
 <!-- /.sidebar-menu -->
