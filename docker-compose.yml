@@ -1,4 +1,12 @@
 version: "2"
+
+volumes:
+  rails-template-sync:
+    external: true
+  gem_store_rails_template:
+    external: true
+  db_data_rails_template:
+
 services:
   postgres:
     image: postgres
@@ -6,6 +14,8 @@ services:
       - POSTGRES_DB=${DB_NAME}
     ports:
       - "5432:5432"
+    volumes:
+      - db_data_rails_template:/var/lib/postgresql/data
   redis:
     image: redis
     ports:
@@ -17,23 +27,15 @@ services:
     command: bundle exec rails start
     env_file:
       - .env.docker
+    tty: true
+    stdin_open: true
     ports:
       - "5000:5000"
       - "8080:8080"
     depends_on:
       - postgres
       - redis
-    volumes_from:
-      - bundle
     volumes:
+      - gem_store_rails_template:/bundle
+      - .:/rails_template
       - rails-template-sync:/rails_template:nocopy
-  bundle:
-    build:
-      context: .
-      dockerfile: Dockerfile-dev
-    volumes:
-      - /bundle
-
-volumes:
-  rails-template-sync:
-    external: true

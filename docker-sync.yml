@@ -6,4 +6,5 @@ syncs:
   rails-template-sync:
     src: './'
     sync_strategy: 'native_osx'
-    sync_excludes: ['node_modules/', 'log/']
+    sync_excludes: ['node_modules/', '.git/', 'tmp/cache/']
+    watch_excludes: ['node_modules/', '.git/', 'tmp/cache/']
