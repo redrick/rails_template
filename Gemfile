@@ -12,7 +12,7 @@ gem 'devise'
 gem 'dotenv-rails', '~> 2.1'
 
 # KEEP RAILS UP TO DATE!
-gem 'rails', '~> 5.1'
+gem 'rails', '~> 5.2'
 
 # PostgreSQL ruby wrapper
 gem 'pg'
