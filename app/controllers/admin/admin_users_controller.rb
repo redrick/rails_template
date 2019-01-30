@@ -22,7 +22,7 @@ module Admin
     def edit; end
 
     def update
-      if @admin_user.update_attributes(premitted_params[:admin_user])
+      if @admin_user.update(premitted_params[:admin_user])
         redirect_to admin_admin_users_path
       else
         render 'edit'

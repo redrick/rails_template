@@ -51,4 +51,4 @@ PreCommit:
     enabled: true
 
   RailsBestPractices:
-    enabled: true
+    enabled: false
