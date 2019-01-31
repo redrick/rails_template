@@ -1,4 +1,4 @@
-FROM redrick/ruby_base_image:latest
+FROM redrick/workstation:latest
 
 MAINTAINER  Andrej Antas <andrej@antas.cz>
 

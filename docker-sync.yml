@@ -1,10 +1,14 @@
 version: "2"
 options:
-  verbose: true
+  verbose: false
   compose-file-path: 'docker-compose.yml'
+  max_attempt: 50
 syncs:
   rails-template-sync:
     src: './'
-    sync_strategy: 'native_osx'
-    sync_excludes: ['node_modules/', '.git/', 'tmp/cache/']
-    watch_excludes: ['node_modules/', '.git/', 'tmp/cache/']
+    sync_strategy: 'unison'
+    sync_excludes_type: 'Path'
+    sync_excludes: ['node_modules/*', 'tmp/cache/*']
+    watch_excludes: ['node_modules/*', 'tmp/cache/*']
+    notify_terminal: false
+

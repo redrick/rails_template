@@ -5,7 +5,7 @@ services:
   postgres:
     image: postgres:11-alpine
     ports:
-      - '5432:5432'
+      - "5432:5432"
     volumes:
       - db_data_rails_template:/var/lib/postgresql/data:cached
     networks:
@@ -19,8 +19,8 @@ services:
   mailcatcher:
     image: schickling/mailcatcher
     ports:
-      - '1080:1080'
-      - '1025:1025'
+      - "1080:1080"
+      - "1025:1025"
     networks:
       - internal
 
@@ -32,13 +32,12 @@ services:
       dockerfile: Dockerfile-dev
     command: bundle exec rails start
     ports:
-      - '5000:5000'
-      - '8080:8080'
+      - "5000:5000"
+      - "8080:8080"
     depends_on:
       - postgres
       - redis
     volumes:
-      - rails_template-sync:/rails_template:nocopy
       - gem_store_rails_template:/bundle:cached
       - .:/rails_template:cached
     networks:
@@ -60,9 +59,6 @@ services:
       - internal
 
 volumes:
-
-  rails_template-sync:
-    external: true
 
   gem_store_rails_template:
     external: true

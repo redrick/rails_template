@@ -15,7 +15,7 @@ gem 'dotenv-rails', '~> 2.1'
 gem 'rails', '~> 5.2'
 
 # PostgreSQL ruby wrapper
-gem 'pg'
+gem 'pg', '< 1'
 
 # timezone info
 gem 'tzinfo-data'
