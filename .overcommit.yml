@@ -45,7 +45,7 @@ PreCommit:
     - '**/db/structure.sql' # Ignore trailing whitespace in generated files
 
   RailsSchemaUpToDate:
-    enabled: false
+    enabled: true
 
   BundleAudit:
     enabled: true
